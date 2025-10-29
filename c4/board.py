@@ -18,7 +18,7 @@ def column_is_full(board: list[list[str]], col: int) -> bool:
 
 
 def drop_disc(board: list[list[str]], col: int, mark: str) -> tuple[int,int] | None:
-    if  column_is_full(board,col):
+    if column_is_full(board,col):
         return
     else:
         x = -1
@@ -30,7 +30,16 @@ def drop_disc(board: list[list[str]], col: int, mark: str) -> tuple[int,int] | N
     return x,col
 
 def legal_moves(board:list[list[str]]) -> list[int]:
-    pass
+    col =[]
+    for i in range(len(board[0])):
+        empty = column_is_full(board,i)
+        if empty:
+          continue
+        else:
+            col.append(i)
+    return col
+
+
 
 
 
