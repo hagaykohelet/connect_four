@@ -8,6 +8,10 @@ def create_board(cols: int = 7, rows: int = 6) -> list[list[str]]:
     return board
 
 
+def print_board(board):
+    for i in create_board():
+        print(i)
+
 
 def column_is_full(board: list[list[str]], col: int) -> bool:
     for i in range(len(board)):
@@ -39,9 +43,11 @@ def legal_moves(board:list[list[str]]) -> list[int]:
             col.append(i)
     return col
 
+def render(board:list[list[str]],one_based_cols:bool=True) ->str:
+    print_board(board)
+    return f"the number of col is: {len(board[0])}"
 
-
-
+# print(render(create_board()))
 
 
 # m = [[1,2,3],
