@@ -10,6 +10,33 @@ def create_board(cols: int = 7, rows: int = 6) -> list[list[str]]:
 
 
 def column_is_full(board: list[list[str]], col: int) -> bool:
-    for i in range(board):
-        for j in range(i):
+    for i in range(len(board)):
+        if board[i][col] == "-":
+            return False
 
+    return True
+
+
+def drop_disc(board: list[list[str]], col: int, mark: str) -> tuple[int,int] | None:
+    if  column_is_full(board,col):
+        return
+    else:
+        x = -1
+        if board[x][col] == "-":
+            board[x][col] = mark
+        else:
+            while board[x][col] != "-":
+                x -= 1
+    return x,col
+
+def legal_moves(board:list[list[str]]) -> list[int]:
+    pass
+
+
+
+
+# m = [[1,2,3],
+#      [1,2,3]]
+# for i in range(len(m)):
+#     for j in range(len(m)):
+#         print (j)
